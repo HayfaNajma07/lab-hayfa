@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block meta %}
 <title>Login</title>
@@ -6,40 +7,34 @@
 
 {% block content %}
 
-<div class = "login">
+<link rel="stylesheet" href="{% static 'login.css' %}" />
 
-    <h1>Login</h1>
-
+<div class = "login-box">
+    <h2>Login</h2>
     <form method="POST" action="">
         {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
+        
+        <div class="user-box">
+            <input type="text" name="username" required="">
+            <label>Username</label>
+        </div>
 
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
+        <div class="user-box">
+            <input type="password" name="password" required="">
+            <label>Password</label>
+        </div>
 
-    {% if messages %}
+        <button class="submit" type="text">LOGIN</button>
+        <a href="{% url 'wishlist:register' %}">REGISTER</a>
+
+        {% if messages %}
         <ul>
             {% for message in messages %}
                 <li>{{ message }}</li>
             {% endfor %}
         </ul>
-    {% endif %}     
-        
-    Belum mempunyai akun? <a href="{% url 'wishlist:register' %}">Buat Akun</a>
-
+        {% endif %}  
+         
+    </form>
 </div>
-
 {% endblock content %}

@@ -1,0 +1,35 @@
+body {
+    background: beige;
+}
+
+.p-4 {
+    margin: 50px 50px;
+}
+
+.col-auto h3 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+h3 {
+    padding-bottom: 20px;
+}
+.table-bordered tbody tr {
+    border: 3px solid black;
+}
+
+.table-bordered tbody tr td {
+    border: 3px solid black;
+}
+
+.table-bordered tbody tr th {
+    border: 3px solid black;
+}
+
+.table-bordered thead tr {
+    border: 3px solid black;
+}
+
+.table-bordered thead tr th {
+    border: 3px solid black;
+}
